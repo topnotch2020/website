@@ -1,9 +1,9 @@
 {
   "version": 2,
   "name": "brokerbridge-website",
-  "outputDirectory": ".",
-  "installCommand": "",
-  "buildCommand": "",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
 
   "headers": [
     {
