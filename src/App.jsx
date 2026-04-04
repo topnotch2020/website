@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useRef } from 'react'
+import { useScrollReveal } from './hooks/useScrollReveal.js'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
@@ -13,26 +14,11 @@ import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 
 export default function App() {
-  // Global scroll-reveal via IntersectionObserver
-  useEffect(() => {
-    const els = document.querySelectorAll('.reveal')
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view')
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    )
-    els.forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
+  const rootRef = useRef(null)
+  useScrollReveal(rootRef, [])
 
   return (
-    <>
+    <div ref={rootRef}>
       <Navbar />
       <main>
         <Hero />
@@ -47,6 +33,6 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop />
-    </>
+    </div>
   )
 }

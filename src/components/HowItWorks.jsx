@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 
 const BROKER_STEPS = [
   {
@@ -46,15 +46,15 @@ function Steps({ steps }) {
   return (
     <div className="hiw-steps">
       {steps.map((step, i) => (
-        <>
-          <div key={step.num} className="hiw-step" style={{ '--delay': `${i * 0.15}s` }}>
+        <Fragment key={step.num}>
+          <div className="hiw-step" style={{ '--delay': `${i * 0.15}s` }}>
             <div className="step-num">{step.num}</div>
             <div className="step-icon-wrap">{step.icon}</div>
             <h3>{step.title}</h3>
             <p>{step.desc}</p>
           </div>
-          {i < steps.length - 1 && <div key={`conn-${i}`} className="hiw-connector" />}
-        </>
+          {i < steps.length - 1 && <div className="hiw-connector" />}
+        </Fragment>
       ))}
     </div>
   )
