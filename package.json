@@ -1,0 +1,11 @@
+{
+  "name": "brokerbridge-website",
+  "version": "1.0.0",
+  "description": "Broker Bridge landing website",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve . --listen 3000 --no-clipboard",
+    "start": "npx serve . --listen 3000",
+    "build": "echo 'Static site — no build step required'"
+  }
+}
