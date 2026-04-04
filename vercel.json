@@ -1,8 +1,9 @@
 {
   "version": 2,
   "name": "brokerbridge-website",
-  "buildCommand": null,
   "outputDirectory": ".",
+  "installCommand": "",
+  "buildCommand": "",
 
   "headers": [
     {
