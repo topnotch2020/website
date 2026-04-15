@@ -7,24 +7,45 @@ export default function Download() {
   const [msg, setMsg]         = useState({ text: '', type: '' })
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setMsg({ text: '', type: '' })
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMsg({ text: '', type: '' });
 
     if (!email.trim()) {
-      setMsg({ text: 'Please enter your email address.', type: 'error' }); return
+      setMsg({ text: 'Please enter your email address.', type: 'error' });
+      return;
     }
     if (!EMAIL_RE.test(email.trim())) {
-      setMsg({ text: 'Please enter a valid email address.', type: 'error' }); return
+      setMsg({ text: 'Please enter a valid email address.', type: 'error' });
+      return;
     }
 
-    setLoading(true)
-    // Simulate API — replace with real endpoint
-    setTimeout(() => {
-      setMsg({ text: "🎉 You're on the list! We'll notify you when we launch in your city.", type: 'success' })
-      setEmail('')
-      setLoading(false)
-    }, 900)
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/v1/marketing/waitlist`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email.trim(), source: 'website' }),
+      });
+
+      const result = await response.json();
+      if (!response.ok) {
+        setMsg({ text: result?.message || 'Unable to submit your email. Please try again later.', type: 'error' });
+      } else {
+        setMsg({ text: result?.message || "You're on the list! We'll notify you when we launch in your city.", type: 'success' });
+        setEmail('');
+      }
+    } catch (error) {
+      setMsg({ text: 'Network error. Please try again later.', type: 'error' });
+      console.error('Waitlist submit failed:', error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
