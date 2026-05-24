@@ -1,7 +1,7 @@
 {
-  "name": "brokerbridge-website",
+  "name": "brokerloop-website",
   "version": "1.0.0",
-  "description": "Broker Bridge landing website",
+  "description": "Broker Loop landing website",
   "private": true,
   "type": "module",
   "scripts": {
