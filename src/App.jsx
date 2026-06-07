@@ -1,38 +1,17 @@
-import { useRef } from 'react'
-import { useScrollReveal } from './hooks/useScrollReveal.js'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Stats from './components/Stats'
-import Features from './components/Features'
-import HowItWorks from './components/HowItWorks'
-import PropertyTypes from './components/PropertyTypes'
-import ForBrokers from './components/ForBrokers'
-import Download from './components/Download'
-import Testimonials from './components/Testimonials'
-import FAQ from './components/FAQ'
-import Footer from './components/Footer'
-import BackToTop from './components/BackToTop'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+import ResetPassword from './pages/ResetPassword.jsx'
+import ForgotPassword from './pages/ForgotPassword.jsx'
 
 export default function App() {
-  const rootRef = useRef(null)
-  useScrollReveal(rootRef, [])
-
   return (
-    <div ref={rootRef}>
-      <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <Features />
-        <HowItWorks />
-        <PropertyTypes />
-        <ForBrokers />
-        <Download />
-        <Testimonials />
-        <FAQ />
-      </main>
-      <Footer />
-      <BackToTop />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/set-password" element={<ResetPassword />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+    </Routes>
   )
 }

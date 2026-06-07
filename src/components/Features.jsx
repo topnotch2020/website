@@ -68,7 +68,7 @@ export default function Features() {
         <div className="section-header reveal" data-anim="fade-up">
           <span className="section-badge">Features</span>
           <h2>Everything a <span className="text-primary">Real Estate</span> Broker Needs</h2>
-          <p>Broker Bridge equips brokers and seekers with all the tools to list, discover, and connect — in one powerful mobile app.</p>
+          <p>BrokerLoop equips brokers and seekers with all the tools to list, discover, and connect — in one powerful mobile app.</p>
         </div>
         <div className="features-grid">
           {FEATURES.map((f, i) => (

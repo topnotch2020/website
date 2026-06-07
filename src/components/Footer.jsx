@@ -1,3 +1,9 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { fetchAppContent } from '../api/appContent.js'
+import { buildSupportUrl, DEFAULT_APP_CONTENT } from '../constants/defaultAppContent.js'
+import Logo from './Logo'
+
 const scrollTo = (e, href) => {
   e.preventDefault()
   const el = document.querySelector(href)
@@ -5,16 +11,30 @@ const scrollTo = (e, href) => {
 }
 
 export default function Footer() {
+  const [supportChannels, setSupportChannels] = useState(
+    DEFAULT_APP_CONTENT.helpSupport.channels.filter((c) => c.enabled)
+  )
+
+  useEffect(() => {
+    let cancelled = false
+    fetchAppContent().then((content) => {
+      if (!cancelled) {
+        setSupportChannels(content.helpSupport.channels.filter((c) => c.enabled))
+      }
+    })
+    return () => { cancelled = true }
+  }, [])
+
+  const emailChannel = supportChannels.find((c) => c.type === 'email')
+  const phoneChannel = supportChannels.find((c) => c.type === 'phone')
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <a href="#" className="logo logo-white" onClick={(e) => scrollTo(e, '#hero')}>
-              <svg className="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 12L12 3L21 12" /><path d="M5 10V20H9V14H15V20H19V10" />
-              </svg>
-              Broker<span>Bridge</span>
+            <a href="#hero" className="legal-logo-link" onClick={(e) => scrollTo(e, '#hero')}>
+              <Logo white />
             </a>
             <p>India's dedicated real estate platform connecting verified brokers with property seekers across major cities.</p>
           </div>
@@ -37,24 +57,35 @@ export default function Footer() {
             <h4>Support</h4>
             <ul>
               <li><a href="#faq" onClick={(e) => scrollTo(e, '#faq')}>FAQ</a></li>
-              <li><a href="#">Help &amp; Support</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><Link to="/forgot-password">Forgot Password</Link></li>
+              {emailChannel && (
+                <li>
+                  <a href={buildSupportUrl(emailChannel)}>
+                    {emailChannel.title}
+                  </a>
+                </li>
+              )}
+              {phoneChannel && (
+                <li>
+                  <a href={buildSupportUrl(phoneChannel)}>
+                    {phoneChannel.title}
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>Legal</h4>
             <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Cookie Policy</a></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>© 2024 TopNotch. All rights reserved. Built with ❤️ in India.</p>
-          <p>Broker Bridge — Real Estate Simplified</p>
+          <p>© {new Date().getFullYear()} BrokerLoop. All rights reserved. Built with ❤️ in India.</p>
+          <p>BrokerLoop — Real Estate Simplified</p>
         </div>
       </div>
     </footer>

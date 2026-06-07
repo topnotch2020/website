@@ -2,11 +2,11 @@ import { useState, useRef } from 'react'
 
 const FAQS = [
   {
-    q: 'Who is Broker Bridge for?',
-    a: 'Broker Bridge is designed for two user types: real estate brokers who want to list and manage properties, and property seekers looking to rent or buy. Brokers register with a verified account and publish listings, while seekers browse, filter, and contact brokers directly through the app.',
+    q: 'Who is BrokerLoop for?',
+    a: 'BrokerLoop is designed for two user types: real estate brokers who want to list and manage properties, and property seekers looking to rent or buy. Brokers register with a verified account and publish listings, while seekers browse, filter, and contact brokers directly through the app.',
   },
   {
-    q: 'How do I list a property on Broker Bridge?',
+    q: 'How do I list a property on BrokerLoop?',
     a: 'After registering as a broker, go to the "Post" tab in the app. Fill in property details — BHK type, furnishing, price, location, amenities — and upload photos. Save as a draft first, then submit for admin verification. Once verified, your listing goes live instantly.',
   },
   {
@@ -14,16 +14,16 @@ const FAQS = [
     a: 'When you submit a listing it enters "Unverified" status. Our admin team reviews it for accuracy, completeness, and quality. Once approved, it moves to "Verified" and goes live. Rental listings remain active for 30 days and can be renewed with a single tap.',
   },
   {
-    q: 'Is Broker Bridge free to use?',
-    a: 'The Broker Bridge app is completely free to download and use. Brokers receive a quota of listings they can publish. Property seekers can browse, search, save favorites, and contact brokers at no cost. We may introduce optional premium features in the future, but our core platform remains free.',
+    q: 'Is BrokerLoop free to use?',
+    a: 'The BrokerLoop app is completely free to download and use. Brokers receive a quota of listings they can publish. Property seekers can browse, search, save favorites, and contact brokers at no cost. We may introduce optional premium features in the future, but our core platform remains free.',
   },
   {
     q: 'What property types are supported?',
-    a: 'Broker Bridge supports all major residential types: Flats/Apartments (1RK to 4+BHK), Row Houses/Bungalows, Studio Apartments, and Penthouses/Duplexes. All property types can be listed for either Rent or Sale with flexible filters for seekers.',
+    a: 'BrokerLoop supports all major residential types: Flats/Apartments (1RK to 4+BHK), Row Houses/Bungalows, Studio Apartments, and Penthouses/Duplexes. All property types can be listed for either Rent or Sale with flexible filters for seekers.',
   },
   {
     q: 'How can I contact a broker about a property?',
-    a: "Every verified listing on Broker Bridge displays the broker's full contact details including name and phone number. You can call or message the broker directly from the property detail page within the app — no middleman, no delay.",
+    a: "Every verified listing on BrokerLoop displays the broker's full contact details including name and phone number. You can call or message the broker directly from the property detail page within the app — no middleman, no delay.",
   },
 ]
 
@@ -62,7 +62,7 @@ export default function FAQ() {
         <div className="section-header reveal" data-anim="fade-up">
           <span className="section-badge">FAQ</span>
           <h2>Frequently Asked <span className="text-primary">Questions</span></h2>
-          <p>Everything you need to know about Broker Bridge. Can't find an answer? Reach out to our support team.</p>
+          <p>Everything you need to know about BrokerLoop. Can't find an answer? Reach out to our support team.</p>
         </div>
         <div className="faq-list reveal" data-anim="fade-up" style={{ '--delay': '0.1s' }}>
           {FAQS.map((item, i) => (

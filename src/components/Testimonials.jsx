@@ -1,13 +1,13 @@
 const TESTIMONIALS = [
   {
     initials: 'RK',
-    text: '"Broker Bridge completely transformed how I manage my listings. I get notified instantly when someone shows interest — it\'s like having a 24/7 assistant."',
+    text: '"BrokerLoop completely transformed how I manage my listings. I get notified instantly when someone shows interest — it\'s like having a 24/7 assistant."',
     name: 'Rajesh Kumar',
     role: 'Senior Broker · Mumbai',
   },
   {
     initials: 'PS',
-    text: '"Found my dream apartment in 3 days using Broker Bridge. The verified listings gave me confidence and the search filters saved so much time."',
+    text: '"Found my dream apartment in 3 days using BrokerLoop. The verified listings gave me confidence and the search filters saved so much time."',
     name: 'Priya Sharma',
     role: 'Property Seeker · Pune',
   },
@@ -26,7 +26,7 @@ export default function Testimonials() {
         <div className="section-header reveal" data-anim="fade-up">
           <span className="section-badge">Testimonials</span>
           <h2>Trusted by <span className="text-primary">Real Brokers</span></h2>
-          <p>Hear from the brokers and property seekers who use Broker Bridge every day across India.</p>
+          <p>Hear from the brokers and property seekers who use BrokerLoop every day across India.</p>
         </div>
         <div className="testimonials-grid">
           {TESTIMONIALS.map((t, i) => (

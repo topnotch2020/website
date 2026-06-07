@@ -32,7 +32,7 @@ export default function PropertyTypes() {
         <div className="section-header reveal" data-anim="fade-up">
           <span className="section-badge">Listings</span>
           <h2>All Property Types, <span className="text-primary">One Platform</span></h2>
-          <p>From studio apartments to luxury penthouses — Broker Bridge supports all residential property types for rent and sale.</p>
+          <p>From studio apartments to luxury penthouses — BrokerLoop supports all residential property types for rent and sale.</p>
         </div>
         <div className="prop-types-grid">
           {TYPES.map((t, i) => (

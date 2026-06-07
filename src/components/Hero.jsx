@@ -29,7 +29,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-subtitle">
-            Broker Bridge is India's dedicated marketplace for real estate brokers and property seekers.
+            BrokerLoop is India's dedicated marketplace for real estate brokers and property seekers.
             List verified properties, discover premium listings, and transact with confidence.
           </p>
 

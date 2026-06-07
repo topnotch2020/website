@@ -36,7 +36,7 @@ export default function ForBrokers() {
           <div className="fb-content reveal" data-anim="fade-right">
             <span className="section-badge section-badge-light">For Brokers</span>
             <h2>Grow Your Real Estate<br /><span className="text-accent-light">Business Digitally</span></h2>
-            <p>Broker Bridge gives you a powerful dedicated platform to manage your listings, reach more seekers, and close deals faster than ever before.</p>
+            <p>BrokerLoop gives you a powerful dedicated platform to manage your listings, reach more seekers, and close deals faster than ever before.</p>
             <ul className="broker-benefits">
               {BENEFITS.map((b) => (
                 <li key={b.strong}>

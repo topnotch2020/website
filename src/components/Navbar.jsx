@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import Logo from './Logo'
+
 const NAV_LINKS = [
   { href: '#features',     label: 'Features' },
   { href: '#how-it-works', label: 'How It Works' },
@@ -43,12 +45,8 @@ export default function Navbar() {
   return (
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="navbar">
       <div className="container navbar-inner">
-        <a href="#" className="logo" onClick={(e) => handleLink(e, '#hero')}>
-          <svg className="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 12L12 3L21 12" />
-            <path d="M5 10V20H9V14H15V20H19V10" />
-          </svg>
-          Broker<span>Bridge</span>
+        <a href="#hero" className="legal-logo-link" onClick={(e) => handleLink(e, '#hero')}>
+          <Logo />
         </a>
 
         <ul className={`nav-links${menuOpen ? ' open' : ''}`} id="navLinks">

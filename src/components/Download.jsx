@@ -53,8 +53,8 @@ export default function Download() {
       <div className="container">
         <div className="download-inner reveal" data-anim="fade-up">
           <span className="section-badge section-badge-blue">Get the App</span>
-          <h2>Download Broker Bridge<br /><span className="text-accent">Today — It's Free</span></h2>
-          <p>Available on Android and iOS. Join thousands of brokers and property seekers already using Broker Bridge across India.</p>
+          <h2>Download BrokerLoop<br /><span className="text-accent">Today — It's Free</span></h2>
+          <p>Available on Android and iOS. Join thousands of brokers and property seekers already using BrokerLoop across India.</p>
 
           <div className="store-buttons">
             <a href="#" className="store-btn">
