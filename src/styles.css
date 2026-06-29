@@ -1384,6 +1384,26 @@ p {
   line-height: 1.75;
 }
 
+.legal-list {
+  margin: 12px 0 0;
+  padding-left: 22px;
+  color: var(--gray-600);
+  line-height: 1.75;
+}
+
+.legal-list li {
+  margin-bottom: 8px;
+}
+
+.legal-list li:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .legal-updated {
   margin-top: 32px;
   color: var(--gray-500);

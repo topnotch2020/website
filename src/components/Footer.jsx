@@ -79,6 +79,7 @@ export default function Footer() {
             <h4>Legal</h4>
             <ul>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/delete-account">Delete Account</Link></li>
             </ul>
           </div>
         </div>
